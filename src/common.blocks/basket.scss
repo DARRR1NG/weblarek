@@ -1,0 +1,49 @@
+@use "variables" as *;
+@use "mixins";
+
+.basket {
+  @include mixins.flex(column);
+  gap: 2rem;
+  height: 60vh;
+
+  &__list {
+    padding: 0 2rem 0 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+  }
+  
+  &__list:not(:has(> *))::before {
+    content: 'Корзина пуста';
+    opacity: 0.3;
+    display: block;
+    text-align: left;
+    font-style: regular;
+    font-weight: 400;
+  }
+
+  &__item {
+    border-bottom: 1px solid $primary;
+    padding: 1.5rem 0;
+
+    &-index {
+      @include mixins.flex(row);
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      width: 55px;
+      height: 55px;
+      border-radius: 50%;
+      background-color: $primary;
+      color: white;
+      margin-right: 1rem;
+    }
+
+    &-delete {
+      @include mixins.icon(2rem, 'trash');
+      @include mixins.link($hover, white);
+      opacity: 0.5;
+      margin-left: 4rem;
+    }
+  }
+}
