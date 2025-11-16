@@ -24,7 +24,9 @@ export class Basket {
     getAllMoneyBasket(): number {
         let allMoney: number = 0;
         this.payList.forEach(element => {
-            allMoney += element.price
+            if (element.price != null) {
+                allMoney += element.price
+            } else {allMoney += 0}
         });
         return allMoney
     }

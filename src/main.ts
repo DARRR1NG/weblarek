@@ -16,6 +16,7 @@ productsModel.savedList(products.items); // сохранение товаров
 const productObject = productsModel.getList(); // получение товаров
 console.log(productObject);
 console.log(productsModel.getProductId('c101ab44-ed99-4a54-990d-47aa2bb4e7d9')); // поиск товара по айди
+console.log(productsModel.getProductId('123')); // поиск товара по айди
 productsModel.saveProduct(products.items[0]); // сохранение карточки товара
 console.log(productsModel.getProduct()); // получение карточки товара
 
@@ -29,7 +30,7 @@ const BuyerInfo = {
     }
 buyerModel.saveData(BuyerInfo); // сохранение данных
 console.log(buyerModel.getDataBuyer()); // получение данных
-console.log(buyerModel.removeDataBuyer()); // очищение данных
+buyerModel.removeDataBuyer(); // очищение данных
 buyerModel.saveData(BuyerInfo); // заново сохраняю данные
 console.log(buyerModel.getDataBuyer()); // получение данных
 console.log(buyerModel.validationData()); // валидация данных

@@ -21,6 +21,13 @@ export interface IProductList {
 
 type paymentType = 'card' | 'cash' | ''
 
+export interface IValidation {
+  payment: string;
+  email: string;
+  phone: string;
+  address: string;
+}
+
 export interface IBuyer {
   payment: paymentType;
   email: string;
@@ -31,9 +38,4 @@ export interface IBuyer {
 export interface IOrderResponse extends IBuyer {
     total: number,
     items: string[]
-}
-
-export interface IProductResponse {
-    total: number,
-    items: IProduct[]
 }

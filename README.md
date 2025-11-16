@@ -139,7 +139,7 @@ interface IBuyer {
 Методы класса:
 1. savedList(products: IProduct[]): void - сохранение массива товаров полученного в параметрах метода;
 2. getList(): IProduct[] - получение массива товаров из модели;
-3. getProductId(id: string): IProduct - получение одного товара по его id;
+3. getProductId(id: string): IProduct | undefined - получение одного товара по его id;
 4. saveProduct(card: IProduct): void - сохранение товара для подробного отображения;
 5. getProduct(): IProduct - получение товара для подробного отображения.
 
@@ -166,7 +166,7 @@ interface IBuyer {
 1. saveData(data: IBuyer): void - сохранение данных в модели;
 2. getDataBuyer(): IBuyer - получение всех данных покупателя;
 3. removeDataBuyer(): void - очистка данных покупателя;
-4. validationData(): IBuyer - валидация данных.
+4. validationData(): IValidation - валидация данных.
 
 ## Слой коммуникации
 Класс запроса на сервер (class Communication)

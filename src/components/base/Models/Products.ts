@@ -1,4 +1,4 @@
-import { IProduct, IProductList } from "../../../types";
+import { IProduct } from "../../../types";
 export class Products {
     chooseCard: IProduct;
     productsList: IProduct[] = [];
@@ -13,8 +13,8 @@ export class Products {
     }
 
     // Получение одного товара по его id
-    getProductId(id: string): IProduct {
-        return this.productsList.find(item => item.id === id) || null;
+    getProductId(id: string): IProduct | undefined {
+        return this.productsList.find(item => item.id === id);
     }
 
     // Сохранение товара для подробного отображения

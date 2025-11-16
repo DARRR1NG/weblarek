@@ -1,4 +1,4 @@
-import { IBuyer } from "../../../types";
+import { IBuyer, IValidation } from "../../../types";
 
 export class Buyer {
     BuyerInfo: IBuyer = {
@@ -28,7 +28,7 @@ export class Buyer {
         };
     }
     // Валидация данных
-    validationData(): IBuyer {
+    validationData(): IValidation {
         const fault = {
             payment: "",
             email: "",

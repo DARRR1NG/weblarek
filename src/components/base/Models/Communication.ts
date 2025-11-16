@@ -1,4 +1,4 @@
-import { IOrderResponse, IProductResponse } from "../../../types";
+import { IOrderResponse, IProductList } from "../../../types";
 import { Api } from "../Api";
 
 export class Communication extends Api {
@@ -6,7 +6,7 @@ export class Communication extends Api {
         super(baseUrl, options);
     }
 
-    getProductList(): Promise<IProductResponse> {
+    getProductList(): Promise<IProductList> {
         return this.get('/product/');
     }
 
