@@ -33,7 +33,7 @@ export class Basket {
     // Получение количества товаров в корзине
     getQuantityBasket(): number {
         let allQuantity: number = 0;
-        this.payList.forEach(element => {
+        this.payList.forEach(() => {
             allQuantity += 1
         });
         return allQuantity

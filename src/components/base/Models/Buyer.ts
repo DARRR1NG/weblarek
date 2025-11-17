@@ -5,7 +5,7 @@ export class Buyer {
         payment: "",
         email: "",
         phone: "",
-        address: "",
+        address: ""
     }
     // Сохранение данных в модели
     saveData(data: IBuyer): void {

@@ -4,14 +4,28 @@ import { Buyer } from './components/base/Models/Buyer';
 import { Basket } from './components/base/Models/Basket';
 import { Communication } from './components/base/Models/Communication';
 import { API_URL } from './utils/constants';
+import { IBuyer, IOrderResponse } from './types';
 
 const apiModel = new Communication(API_URL);
 const productsModel = new Products();
 const buyerModel = new Buyer();
 const basketModel = new Basket();
 
-// тестирование класса Products
+// сохранение данных с сервера
 const products = await apiModel.getProductList();
+const data: IOrderResponse = {
+  payment: "card",
+  email: "test@test.ru",
+  phone: "+71234567890",
+  address: "Spb Vosstania 1",
+  total: 2200,
+  items: [
+    "854cef69-976d-4c2a-a18c-2aa45046c390",
+    "c101ab44-ed99-4a54-990d-47aa2bb4e7d9"
+  ]
+}
+apiModel.postData(data);
+// тестирование класса Products
 productsModel.savedList(products.items); // сохранение товаров
 const productObject = productsModel.getList(); // получение товаров
 console.log(productObject);
@@ -22,11 +36,11 @@ console.log(productsModel.getProduct()); // получение карточки 
 
 // тестирование класса Buyer
 // предполагаемые данные покупателя
-const BuyerInfo = { 
-        payment: 'card',
-        email: "",
-        phone: "8956765",
-        address: "yandex",
+const BuyerInfo: IBuyer = { 
+    payment: '',
+    email: "test@test.ru",
+    phone: "+71234567890",
+    address: "Spb Vosstania 1",
     }
 buyerModel.saveData(BuyerInfo); // сохранение данных
 console.log(buyerModel.getDataBuyer()); // получение данных

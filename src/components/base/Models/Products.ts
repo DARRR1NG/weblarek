@@ -1,6 +1,6 @@
 import { IProduct } from "../../../types";
 export class Products {
-    chooseCard: IProduct;
+    chooseCard: IProduct | null = null;
     productsList: IProduct[] = [];
 
     // Cохранение массива товаров полученного в параметрах метода
@@ -23,7 +23,7 @@ export class Products {
     }
 
     // Получение товара для подробного отображения
-    getProduct(): IProduct {
+    getProduct(): IProduct | null {
         return this.chooseCard
     }
 }

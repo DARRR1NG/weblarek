@@ -19,20 +19,20 @@ export interface IProductList {
   items: IProduct[]
 }
 
-type paymentType = 'card' | 'cash' | ''
+export type paymentType = 'card' | 'cash' | ''
 
 export interface IValidation {
-  payment: string;
-  email: string;
-  phone: string;
-  address: string;
+  payment: string,
+  email: string,
+  phone: string,
+  address: string,
 }
 
 export interface IBuyer {
-  payment: paymentType;
-  email: string;
-  phone: string;
-  address: string;
+  payment: paymentType,
+  email: string,
+  phone: string,
+  address: string,
 }
 
 export interface IOrderResponse extends IBuyer {
