@@ -1,5 +1,5 @@
-import { IOrderResponse, IProductList } from "../../../types";
-import { Api } from "../Api";
+import { IOrderResponse, IProductList, IOrderPostResponse } from "../../types";
+import { Api } from "../base/Api";
 
 export class Communication extends Api {
   constructor(baseUrl: string, options: RequestInit = {}) {
@@ -10,7 +10,7 @@ export class Communication extends Api {
         return this.get('/product/');
     }
 
-    postData(order: IOrderResponse): Promise<IOrderResponse> {
+    postData(order: IOrderResponse): Promise<IOrderPostResponse> {
         return this.post('/order/', order);
     }
 }

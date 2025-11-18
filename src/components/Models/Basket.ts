@@ -1,4 +1,4 @@
-import { IProduct } from "../../../types";
+import { IProduct } from "../../types";
 
 export class Basket {
     payList: IProduct[] = [];
@@ -22,21 +22,11 @@ export class Basket {
     }
     // Получение стоимости всех товаров в корзине
     getAllMoneyBasket(): number {
-        let allMoney: number = 0;
-        this.payList.forEach(element => {
-            if (element.price != null) {
-                allMoney += element.price
-            } else {allMoney += 0}
-        });
-        return allMoney
+    return this. payList.reduce((total, item) => total + (item.price || 0), 0);
     }
     // Получение количества товаров в корзине
     getQuantityBasket(): number {
-        let allQuantity: number = 0;
-        this.payList.forEach(() => {
-            allQuantity += 1
-        });
-        return allQuantity
+        return this.payList.length
     }
     // Проверка наличия товара в корзине по его id, полученного в параметре метода
     checkProductIdBasket(id: string): boolean {

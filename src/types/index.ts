@@ -21,12 +21,7 @@ export interface IProductList {
 
 export type paymentType = 'card' | 'cash' | ''
 
-export interface IValidation {
-  payment: string,
-  email: string,
-  phone: string,
-  address: string,
-}
+export type TBuyerErrors = Partial<Record<keyof IBuyer, string>>;
 
 export interface IBuyer {
   payment: paymentType,
@@ -38,4 +33,9 @@ export interface IBuyer {
 export interface IOrderResponse extends IBuyer {
     total: number,
     items: string[]
+}
+
+export interface IOrderPostResponse {
+  id: string[],
+  total: number
 }

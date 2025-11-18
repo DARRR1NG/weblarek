@@ -1,7 +1,7 @@
-import { IBuyer, IValidation } from "../../../types";
+import { IBuyer, TBuyerErrors } from "../../types";
 
 export class Buyer {
-    BuyerInfo: IBuyer = {
+    buyerInfo: IBuyer = {
         payment: "",
         email: "",
         phone: "",
@@ -9,18 +9,15 @@ export class Buyer {
     }
     // Сохранение данных в модели
     saveData(data: IBuyer): void {
-        this.BuyerInfo.email = data.email,
-        this.BuyerInfo.address = data.address,
-        this.BuyerInfo.phone = data.phone,
-        this.BuyerInfo.payment = data.payment
+        this.buyerInfo = data
     }
     // Получение всех данных покупателя
     getDataBuyer(): IBuyer {
-        return this.BuyerInfo
+        return this.buyerInfo
     }
     // Очистка данных покупателя
     removeDataBuyer(): void {
-        this.BuyerInfo = {
+        this.buyerInfo = {
             payment: "",
             email: "",
             phone: "",
@@ -28,23 +25,23 @@ export class Buyer {
         };
     }
     // Валидация данных
-    validationData(): IValidation {
+    validationData(): TBuyerErrors {
         const fault = {
             payment: "",
             email: "",
             phone: "",
             address: "",
         }
-        if (this.BuyerInfo.address == '') {
+        if (this.buyerInfo.address == '') {
             fault.address = 'Не введен адрес'
         }
-        if (this.BuyerInfo.email == '') {
+        if (this.buyerInfo.email == '') {
             fault.email = 'Не введен email'
         }
-        if (this.BuyerInfo.payment != 'card' && this.BuyerInfo.payment != 'cash' && this.BuyerInfo.payment != '') {
+        if (this.buyerInfo.payment != 'card' && this.buyerInfo.payment != 'cash') {
             fault.payment = 'Не выбран тип оплаты'
         }
-        if (this.BuyerInfo.phone == '') {
+        if (this.buyerInfo.phone == '') {
             fault.phone = 'Не введен номер телефона'
         }
         return fault

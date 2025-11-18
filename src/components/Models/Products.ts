@@ -1,4 +1,4 @@
-import { IProduct } from "../../../types";
+import { IProduct } from "../../types";
 export class Products {
     chooseCard: IProduct | null = null;
     productsList: IProduct[] = [];
