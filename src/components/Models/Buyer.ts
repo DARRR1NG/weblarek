@@ -8,8 +8,8 @@ export class Buyer {
         address: ""
     }
     // Сохранение данных в модели
-    saveData(data: IBuyer): void {
-        this.buyerInfo = data
+    saveData(data: Partial<IBuyer>): void {
+        Object.assign(this.buyerInfo, data);
     }
     // Получение всех данных покупателя
     getDataBuyer(): IBuyer {

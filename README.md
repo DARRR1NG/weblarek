@@ -164,7 +164,7 @@ interface IBuyer {
 Поля класса: 
 1. BuyerInfo: IBuyer - объект с незаполненными данными пользователя.
 Методы класса:
-1. saveData(data: IBuyer): void - сохранение данных в модели;
+1. saveData(data: Partial<IBuyer>): void - сохранение данных в модели;
 2. getDataBuyer(): IBuyer - получение всех данных покупателя;
 3. removeDataBuyer(): void - очистка данных покупателя;
 4. validationData(): IValidation - валидация данных.

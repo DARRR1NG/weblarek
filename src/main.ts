@@ -37,18 +37,26 @@ console.log('Получение карточки товара', productsModel.ge
 
 // тестирование класса Buyer
 // предполагаемые данные покупателя
-const BuyerInfo: IBuyer = { 
+const buyerInfo: Partial<IBuyer> = { 
     payment: 'card',
-    email: "",
-    phone: "+71234567890",
-    address: "Spb Vosstania 1",
-    }
-buyerModel.saveData(BuyerInfo); // сохранение данных
+    phone: '87485734985'
+}
+
+const updateInfo: Partial<IBuyer> = {
+    email: "123@yandex.ru",
+    phone: ''
+}
+buyerModel.saveData(buyerInfo); // сохранение данных
 console.log('Получение данных', buyerModel.getDataBuyer()); // получение данных
 buyerModel.removeDataBuyer(); // очищение данных
-buyerModel.saveData(BuyerInfo); // заново сохраняю данные
+console.log('Данные после очистки', buyerModel.getDataBuyer())
+buyerModel.saveData(buyerInfo); // заново сохраняю данные
 console.log('Получение данных', buyerModel.getDataBuyer()); // получение данных
 console.log('Валидация данных', buyerModel.validationData()); // валидация данных
+buyerModel.saveData(updateInfo) // сохранение новых данных пользователем
+console.log('Получение новых данных', buyerModel.getDataBuyer()); // получение данных
+console.log('Валидация новых данных', buyerModel.validationData()); // валидация данных
+
 
 // тестирование класса Basket
 basketModel.addProductBasket(products.items[1]) // добавление товара в корзину
@@ -65,7 +73,7 @@ basketModel.removeBasket(); // очистка корзины
 console.log('Получение списка товаров в корзине', basketModel.getListProducts()) // получение списка товаров в корзине
 
 // запрос данных с сервера
-const productsServer = apiModel.getProductList().then(response => {
+apiModel.getProductList().then(response => {
   productsModel.savedList(response.items)
   console.log('Данные с сервера', productsModel.getList())
 }).catch (() => {console.error('Ошибка данных')})
