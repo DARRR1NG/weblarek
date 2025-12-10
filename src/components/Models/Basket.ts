@@ -1,7 +1,12 @@
 import { IProduct } from "../../types";
+import { IEvents } from "../base/Events";
 
 export class Basket {
     payList: IProduct[] = [];
+
+    constructor(protected events: IEvents) {
+
+    }
 
     // Получение массива товаров, которые находятся в корзине
     getListProducts(): IProduct[] {
@@ -10,13 +15,15 @@ export class Basket {
     // Добавление товара, который был получен в параметре, в массив корзины
     addProductBasket(item: IProduct): void {
         this.payList.push(item);
+        this.events.emit('basket:change')
     }
     // Удаление товара, полученного в параметре из массива корзины
     deleteProductBasket(item: IProduct): void {
         const findIndexProduct = this.payList.indexOf(item);
         this.payList.splice(findIndexProduct, 1);
+        this.events.emit('basket:change')
         }
-    // Очистка корзины;
+    // Очистка корзины
     removeBasket(): IProduct[] {
         return this.payList = [];
     }

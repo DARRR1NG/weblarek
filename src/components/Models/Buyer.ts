@@ -1,4 +1,5 @@
 import { IBuyer, TBuyerErrors } from "../../types";
+import { IEvents } from "../base/Events";
 
 export class Buyer {
     buyerInfo: IBuyer = {
@@ -7,9 +8,13 @@ export class Buyer {
         phone: "",
         address: ""
     }
+
+    constructor(protected events: IEvents) {}
+
     // Сохранение данных в модели
     saveData(data: Partial<IBuyer>): void {
         Object.assign(this.buyerInfo, data);
+        this.events.emit('dataBuyer:change')
     }
     // Получение всех данных покупателя
     getDataBuyer(): IBuyer {
