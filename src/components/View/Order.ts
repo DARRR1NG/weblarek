@@ -22,12 +22,12 @@ export class Order extends Form<IOrder> {
 
         this.moneyPayCard.addEventListener('click', () => {this.onInputChange('payment', 'card')} )
         this.moneyPayCash.addEventListener('click', () => {this.onInputChange('payment', 'cash')} )
-        this.addressInput.addEventListener('click', () => {this.onInputChange('address', this.addressInput.value)} )
+        this.addressInput.addEventListener('input', () => {this.onInputChange('address', this.addressInput.value)} )
     }
 
     set payment(value: paymentType) {
-        this.moneyPayCard.classList.toggle('.button_alt-active', value === 'card');
-        this.moneyPayCash.classList.toggle('.button_alt-active', value === 'cash');
+        this.moneyPayCard.classList.toggle('button_alt-active', value === 'card');
+        this.moneyPayCash.classList.toggle('button_alt-active', value === 'cash');
     }
 
      set address(value: string) {

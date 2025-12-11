@@ -4,9 +4,7 @@ import { IEvents } from "../base/Events";
 export class Basket {
     payList: IProduct[] = [];
 
-    constructor(protected events: IEvents) {
-
-    }
+    constructor(protected events: IEvents) { }
 
     // Получение массива товаров, которые находятся в корзине
     getListProducts(): IProduct[] {
