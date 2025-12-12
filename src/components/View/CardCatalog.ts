@@ -43,7 +43,7 @@ export class CardCatalog extends Card<IProduct> {
     }
 
     set image(value: string) {
-        this.imageElement.src = `${CDN_URL}/${value}`;
-        this.imageElement.alt = this.title;
+        const imageItem = `${CDN_URL}/${value}`;
+        this.setImage(this.imageElement, imageItem, this.title)
     }
 }

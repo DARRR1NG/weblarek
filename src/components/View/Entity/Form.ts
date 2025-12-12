@@ -14,9 +14,10 @@ export class Form<T extends IForm> extends Component<T> {
         this.formButton = ensureElement<HTMLButtonElement>('.modal__actions button', this.container);
         this.faults = ensureElement<HTMLElement>('.form__errors', this.container)
 
-        this.formButton.addEventListener('click', (event: Event) => {
+        this.container.addEventListener('submit', (event: Event) => {
             event.preventDefault();
-            this.events.emit(`${this.container.getAttribute('name')}:click`)} )
+            this.events.emit(`${this.container.getAttribute('name')}:click`)} 
+        )
     }
 
     set fault(value: string) {

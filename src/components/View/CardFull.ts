@@ -33,8 +33,8 @@ export class CardFull extends Card<IProduct> {
         }
     
     set image(value: string) {
-        this.cardImage.src = `${CDN_URL}/${value}`;
-        this.cardImage.alt = this.title;
+        const imageItem = `${CDN_URL}/${value}`;
+        this.setImage(this.cardImage, imageItem, this.title)
     }
 
     set description(value: string) {
