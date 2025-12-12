@@ -45,8 +45,7 @@ events.on('change:catalog', () =>
   })
 
 events.on('basket:open', () => 
-  {
-  header.counter = basketModel.getQuantityBasket();
+  {header.counter = basketModel.getQuantityBasket();
   const productsBasket = basketModel.getListProducts().map((item, index) => {
     const cardMini = new CardBasket(events, cloneTemplate('#card-basket'));
     cardMini.indexCard = index + 1;
@@ -56,8 +55,8 @@ events.on('basket:open', () =>
   })
   basketShop.basketItems = productsBasket;
   basketShop.total = basketModel.getAllMoneyBasket();
-  modal.render({content: basketShop.render()})
-  modal.open();
+    modal.render({content: basketShop.render()})
+    modal.open();
   })
 
 events.on('card:open', (events: {cardId: string}) => {
@@ -65,7 +64,7 @@ events.on('card:open', (events: {cardId: string}) => {
   if (idProduct === undefined) {
     return
   }
-  const saveProduct = productsModel.saveProduct(idProduct);
+  productsModel.saveProduct(idProduct);
 })
 
 events.on('cardModal:open', () => {
@@ -125,7 +124,6 @@ events.on('card:remove', (events: {cardId: string}) => {
 })
 
 events.on('continue', () => {
-  formOrder.fault = '';
   modal.render({content: formOrder.render()})
 })
 
@@ -135,10 +133,9 @@ events.on('form:change', (events: {field: keyof IBuyer, value: string}) => {
   console.log(dataBuyer)
 })
 
-
 events.on('dataBuyer:change', () => {
   const dataBuyer = buyerModel.getDataBuyer();
-  const errors = buyerModel.validationData();
+  const errors = buyerModel.validationData(); 
 
   if (dataBuyer) {
     formOrder.payment = dataBuyer.payment || ''
@@ -188,6 +185,7 @@ events.on('contacts:click', () => {
   const dataAll: IOrderResponse = {...dataBuyerInfo, total: basketModel.getAllMoneyBasket(), items: basketModel.getListProducts().map(item => item.id)};
   apiModel.postData(dataAll).then(() => {
     basketModel.removeBasket();
+    header.counter = 0;
     orderSuccessModel.finalTotal = dataAll.total;
     }).catch (() => {console.error('Ошибка данных')})
     modal.render({content: orderSuccessModel.render()})

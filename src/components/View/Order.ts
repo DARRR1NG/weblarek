@@ -30,7 +30,7 @@ export class Order extends Form<IOrder> {
         this.moneyPayCash.classList.toggle('button_alt-active', value === 'cash');
     }
 
-     set address(value: string) {
+    set address(value: string) {
         this.addressInput.value = value;
     }
 }

@@ -4,8 +4,8 @@ import { IEvents } from "../base/Events";
 import { Card } from "./Entity/Card";
 
 export class CardBasket extends Card<IProduct> {
-    cardButton: HTMLButtonElement;
-    index: HTMLElement
+    protected cardButton: HTMLButtonElement;
+    protected index: HTMLElement
 
     constructor(protected events: IEvents, container: HTMLElement) {
         super(container)

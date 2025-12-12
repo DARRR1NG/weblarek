@@ -17,7 +17,7 @@ export class CardCatalog extends Card<IProduct> {
     protected imageElement: HTMLImageElement;
     protected categoryElement: HTMLElement;
 
-    constructor(protected events: IEvents,container: HTMLElement) {
+    constructor(protected events: IEvents, container: HTMLElement) {
         super(container);
         this.categoryElement = ensureElement<HTMLElement>(
             '.card__category',
