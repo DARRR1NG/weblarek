@@ -4,17 +4,18 @@
 
 ## :file_folder: Структура проекта
 Структура проекта:
-- src/ — исходные файлы проекта
-- src/components/ — папка с JS компонентами
-- src/components/base/ — папка с базовым кодом
+- `docs` — файлы для сборки сайта на GitHub pages
+- `src/` — исходные файлы проекта
+- `src/components/` — папка с JS компонентами
+- `src/components/base/` — папка с базовым кодом
 
 Важные файлы:
-- index.html — HTML-файл главной страницы
-- src/types/index.ts — файл с типами
-- src/main.ts — точка входа приложения
-- src/scss/styles.scss — корневой файл стилей
-- src/utils/constants.ts — файл с константами
-- src/utils/utils.ts — файл с утилитами
+- `index.html` — HTML-файл главной страницы
+- `src/types/index.ts` — файл с типами
+- `src/main.ts` — точка входа приложения
+- `src/scss/styles.scss` — корневой файл стилей
+- `src/utils/constants.ts` — файл с константами
+- `src/utils/utils.ts` — файл с утилитами
 
 <img width="1072" height="714" alt="image" src="https://github.com/user-attachments/assets/c4d115b6-2116-428c-94b2-4b6f48dfc7fd" />
 
@@ -141,39 +142,39 @@ interface IBuyer {
 Назначение и зона ответственности: хранение товаров, которые можно купить в приложении.
 Конструктор класса: -
 Поля класса: 
-1. chooseCard: IProduct | null = null - хранение данных о выбранной карточке товара.
-2. productsList: IProduct[] = [] - хранение массива всех товаров магазина.
+1. `chooseCard: IProduct | null = null` - хранение данных о выбранной карточке товара.
+2. `productsList: IProduct[] = []` - хранение массива всех товаров магазина.
 Методы класса:
-1. savedList(products: IProduct[]): void - сохранение массива товаров полученного в параметрах метода;
-2. getList(): IProduct[] - получение массива товаров из модели;
-3. getProductId(id: string): IProduct | undefined - получение одного товара по его id;
-4. saveProduct(card: IProduct): void - сохранение товара для подробного отображения;
-5. getProduct(): IProduct | null - получение товара для подробного отображения.
+1. `savedList(products: IProduct[]): void` - сохранение массива товаров полученного в параметрах метода;
+2. `getList(): IProduct[]` - получение массива товаров из модели;
+3. `getProductId(id: string): IProduct | undefined` - получение одного товара по его id;
+4. `saveProduct(card: IProduct): void` - сохранение товара для подробного отображения;
+5. `getProduct(): IProduct | null` - получение товара для подробного отображения.
 
 Класс корзины (class Basket)
 Назначение и зона ответственности: хранение товаров, которые пользователь выбрал для покупки.
 Конструктор класса: -
 Поля класса: 
-1. payList: IProduct[] = [] - хранение массива товаров в корзине.
+1. `payList: IProduct[] = []` - хранение массива товаров в корзине.
 Методы класса:
-1. getListProducts(): IProduct[] - получение массива товаров, которые находятся в корзине;
-2. addProductBasket(item: IProduct): void - добавление товара, который был получен в параметре, в массив корзины;
-3. deleteProductBasket(item: IProduct): void - удаление товара, полученного в параметре из массива корзины;
-4. removeBasket(): IProduct[] - очистка корзины;
-5. getAllMoneyBasket(): number - получение стоимости всех товаров в корзине;
-6. getQuantityBasket(): number - получение количества товаров в корзине;
-7. checkProductIdBasket(id: string): boolean - проверка наличия товара в корзине по его id, полученного в параметре метода.
+1. `getListProducts(): IProduct[]` - получение массива товаров, которые находятся в корзине;
+2. `addProductBasket(item: IProduct): void` - добавление товара, который был получен в параметре, в массив корзины;
+3. `deleteProductBasket(item: IProduct): void` - удаление товара, полученного в параметре из массива корзины;
+4. `removeBasket(): IProduct[]` - очистка корзины;
+5. `getAllMoneyBasket(): number` - получение стоимости всех товаров в корзине;
+6. `getQuantityBasket(): number` - получение количества товаров в корзине;
+7. `checkProductIdBasket(id: string): boolean` - проверка наличия товара в корзине по его id, полученного в параметре метода.
 
 Класс покупателя (class Buyer)
 Назначение и зона ответственности: данные покупателя, которые тот должен указать при оформлении заказа.
 Конструктор класса: -
 Поля класса: 
-1. BuyerInfo: IBuyer - объект с незаполненными данными пользователя.
+1. `BuyerInfo: IBuyer` - объект с незаполненными данными пользователя.
 Методы класса:
-1. saveData(data: Partial<IBuyer>): void - сохранение данных в модели;
-2. getDataBuyer(): IBuyer - получение всех данных покупателя;
-3. removeDataBuyer(): void - очистка данных покупателя;
-4. validationData(): IValidation - валидация данных.
+1. `saveData(data: Partial<IBuyer>): void` - сохранение данных в модели;
+2. `getDataBuyer(): IBuyer` - получение всех данных покупателя;
+3. `removeDataBuyer(): void` - очистка данных покупателя;
+4. `validationData(): IValidation` - валидация данных.
 
 ## Слой коммуникации
 Класс запроса на сервер (class Communication)
@@ -181,8 +182,8 @@ interface IBuyer {
 Конструктор класса: baseUrl: string, options: RequestInit = {}
 Поля класса: -
 Методы класса:
-1. getProductsList(): Promise<IProductResponse> - делает get запрос на эндпоинт /product/ и возвращает массив товаров.
-2. postData(order: IOrderResponse): Promise<IOrderResponse> - делает post запрос на эндпоинт /order/ и передаёт в него данные, полученные в параметрах метода.
+1. `getProductsList(): Promise<IProductResponse>` - делает get запрос на эндпоинт /product/ и возвращает массив товаров.
+2. `postData(order: IOrderResponse): Promise<IOrderResponse>` - делает post запрос на эндпоинт /order/ и передаёт в него данные, полученные в параметрах метода.
 
 ## Слой представления
 Классы слоя представления (View)
@@ -191,106 +192,106 @@ interface IBuyer {
 Назначение и зона ответственности: шапка магазина для изменения кол-ва товаров в корзине и нажатия на нее.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. basketButton: HTMLButtonElement
-2. counterElement: HTMLElement
+1. `basketButton: HTMLButtonElement`
+2. `counterElement: HTMLElement`
 Методы класса:
-1. set counter(value: number) - установка числа кол-ва товаров в корзине.
+1. `set counter(value: number)` - установка числа кол-ва товаров в корзине.
 
 Класс карточки товара (Card)
 Назначение и зона ответственности: родительский класс карточки товара.
 Конструктор класса: container: HTMLElement 
 Поля класса:
-1. protected priceElement: HTMLElement
-2. protected titleElement: HTMLElement
-3. protected cardId?: string
+1. `protected priceElement: HTMLElement`
+2. `protected titleElement: HTMLElement`
+3. `protected cardId?: string`
 Методы класса:
-1. set id(value: string) - установка id товара
-2. set price(value: number | null) - установка цены товара
-3. set title(value: string) - установка наименования товара
+1. `set id(value: string)` - установка id товара
+2. `set price(value: number | null)` - установка цены товара
+3. `set title(value: string)` - установка наименования товара
 
 Класс карточки товара (Gallery)
 Назначение и зона ответственности: галерея товаров.
 Конструктор класса: container: HTMLElement 
 Поля класса: -
 Методы класса:
-1. catalog(products: HTMLElement[]) - установка каталога товаров.
+1. `catalog(products: HTMLElement[])` - установка каталога товаров.
 
 Класс галереи товаров (class CardCatalog extends Card)
 Назначение и зона ответственности: отображение карточек товаров в магазине.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected imageElement: HTMLImageElement
-2. protected categoryElement: HTMLElement
+1. `protected imageElement: HTMLImageElement`
+2. `protected categoryElement: HTMLElement`
 Методы класса:
-1. category(value: string) - установка категории карточки товара
-2. image(value: string) - установка картинки карточки товара
+1. `category(value: string)` - установка категории карточки товара
+2. `image(value: string)` - установка картинки карточки товара
 
 Класс модального окна (class Modal)
 Назначение и зона ответственности: модальное окно.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected modalButton: HTMLButtonElement
-2. protected modalContent: HTMLElement
+1. `protected modalButton: HTMLButtonElement`
+2. `protected modalContent: HTMLElement`
 Методы класса:
-1. open() - открытие модального окна
-2. close() - закрытие модального окна
-3. content(items: HTMLElement) - установка контента модального окна
+1. `open()` - открытие модального окна
+2. `close()` - закрытие модального окна
+3. `content(items: HTMLElement)` - установка контента модального окна
 
 Класс полной карточки товара(class CardFull extends Card)
 Назначение и зона ответственности: окно с полной информацией карточки из галереи.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected cardImage: HTMLImageElement;
-2. protected cardButton: HTMLButtonElement;
-3. protected cardCategory: HTMLElement;
-4. protected cardDescription: HTMLElement;
+1. `protected cardImage: HTMLImageElement`
+2. `protected cardButton: HTMLButtonElement`
+3. `protected cardCategory: HTMLElement`
+4. `protected cardDescription: HTMLElement`
 Методы класса:
-1. category(value: string) - установка категории карточки товара
-2. image(value: string) - установка изображения 
-3. description(value: string) - установка описания карточки товара
-4. button(value: string) - установка доступности нажатия кнопки
+1. `category(value: string)` - установка категории карточки товара
+2. `image(value: string)` - установка изображения 
+3. `description(value: string)` - установка описания карточки товара
+4. `button(value: string)` - установка доступности нажатия кнопки
 
 Класс карточки в корзине (class BasketFull)
 Назначение и зона ответственности: карточка в корзине.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. basketList: HTMLElement
-2. basketButton: HTMLButtonElement
-3. basketPrice: HTMLElement
+1. `basketList: HTMLElement`
+2. `basketButton: HTMLButtonElement`
+3. `basketPrice: HTMLElement`
 Методы класса:
-1. basketItems(cards: HTMLElement[]) - поведение корзины при наличии и отсутвии товаров
-2. total(value: number) - итоговая стоимость покупки
+1. `basketItems(cards: HTMLElement[])` - поведение корзины при наличии и отсутвии товаров
+2. `total(value: number)` - итоговая стоимость покупки
 
 Класс товаров в корзине (class CardBasket extends Card)
 Назначение и зона ответственности: информация корзины.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected cardButton: HTMLButtonElement;
-2. protected index: HTMLElement
+1. `protected cardButton: HTMLButtonElement`
+2. `protected index: HTMLElement`
 Методы класса:
-1. indexCard(value: number) - установка индекса карточки
+1. `indexCard(value: number)` - установка индекса карточки
 
 Класс формы (Form)
 Назначение и зона ответственности: родительский класс форм.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected formButton: HTMLButtonElement
-2. protected faults: HTMLElement
+1. `protected formButton: HTMLButtonElement
+2. `protected faults: HTMLElement
 Методы класса:
-1. fault(value: string) - вывод ошибок?
-2. buttonState(value: boolean) - 
-3. onInputChange(field: keyof T, value: string) - 
+1. `fault(value: string) - вывод ошибок
+2. `buttonState(value: boolean)` - 
+3. `onInputChange(field: keyof T, value: string)` - 
 
 Класс формы (class Order extends Form)
 Назначение и зона ответственности: форма заказа.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected moneyPayCash: HTMLButtonElement
-2. protected moneyPayCard: HTMLButtonElement
-3. protected addressInput: HTMLInputElement
+1. `protected moneyPayCash: HTMLButtonElement`
+2. `protected moneyPayCard: HTMLButtonElement`
+3. `protected addressInput: HTMLInputElement`
 Методы класса:
-1. payment(value: paymentType) - установка стилей для выбранной кнопки оплаты
-2. address(value: string) - ?
+1. `payment(value: paymentType)` - установка стилей для выбранной кнопки оплаты
+2. `address(value: string)` - 
 
 Класс формы (class OrderSuccess extends Form)
 Назначение и зона ответственности: окно после заполнения форм.
@@ -305,30 +306,30 @@ interface IBuyer {
 Назначение и зона ответственности: форма контактных данных.
 Конструктор класса: protected events: IEvents, container: HTMLElement
 Поля класса:
-1. protected emailInput: HTMLInputElement
-2. protected phoneInput: HTMLInputElement
+1. `protected emailInput: HTMLInputElement`
+2. `protected phoneInput: HTMLInputElement`
 Методы класса:
-1. email(value: string) - запоминание email
-2. phone(value: string) - запоминание телефона
+1. `email(value: string)` - запоминание email
+2. `phone(value: string)` - запоминание телефона
 
 ## Презентер
 
-Презентер выполнен в файле main.ts.
+Презентер выполнен в файле <b>main.ts</b>.
 
 Обработка событий:
-1. change:catalog - рендер каталога карточек товара
-2. basket:open - рендер корзины при нажатии на кнопку в шапке
-3. card:open - сохранение карточки товара в модель данных
-4. cardModal:open - открытие модального окна с подробным описанием карточки товара
-5. buy:products - удаление или добавление товара в корзину
-6. basket:change - изменение корзины
-7. card:remove - удаление карточки из корзины
-8. continue - переход к оформлению заказа
-9. form:change - сохранение данных о покупателе в модель данных
-10. dataBuyer:change - отображение ошибок при валидации данных
-11. order:click - рендер второй формы
-12. contacts:click - отправка POST запроса с данными покупателя и рендер итогового модального окна 
-13. ready:close - закрытие итогового модального окна
+1. `change:catalog` - рендер каталога карточек товара
+2. `basket:open` - рендер корзины при нажатии на кнопку в шапке
+3. `card:open` - сохранение карточки товара в модель данных
+4. `cardModal:open` - открытие модального окна с подробным описанием карточки товара
+5. `buy:products` - удаление или добавление товара в корзину
+6. `basket:change` - изменение корзины
+7. `card:remove` - удаление карточки из корзины
+8. `continue` - переход к оформлению заказа
+9. `form:change` - сохранение данных о покупателе в модель данных
+10. `dataBuyer:change` - отображение ошибок при валидации данных
+11. `order:click` - рендер второй формы
+12. `contacts:click` - отправка POST запроса с данными покупателя и рендер итогового модального окна 
+13. `ready:close` - закрытие итогового модального окна
 
 ## :art: Макет
 https://www.figma.com/design/VQ6xUzaq07oZWq5FHhIAii/Yandex--Веб-ларёк-?timeline=keyframe&node-id=201-9445&p=f&t=3h6aU3rAslrxPnDQ-0
