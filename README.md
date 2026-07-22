@@ -15,6 +15,12 @@
 - src/utils/constants.ts — файл с константами
 - src/utils/utils.ts — файл с утилитами
 
+<img width="1072" height="714" alt="image" src="https://github.com/user-attachments/assets/c4d115b6-2116-428c-94b2-4b6f48dfc7fd" />
+
+<img width="1075" height="716" alt="image" src="https://github.com/user-attachments/assets/52eea6de-fd3e-46e4-9e37-2f83b258665f" />
+
+<img width="1073" height="715" alt="image" src="https://github.com/user-attachments/assets/c8ff47a1-8d06-4e4d-a422-eecc1eeee776" />
+
 ## Установка и запуск
 Для установки и запуска проекта необходимо выполнить команды
 
