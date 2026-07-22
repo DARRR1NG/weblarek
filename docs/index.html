@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#000000" />
+    <link rel="icon" href="/weblarek/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/weblarek/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/weblarek/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/weblarek/favicon-16x16.png">
+
+    <title>Web-Larёk</title>
+    <script type="module" crossorigin src="/weblarek/assets/index-JFGpCpCR.js"></script>
+    <link rel="stylesheet" crossorigin href="/weblarek/assets/index-67d1m67h.css">
+  </head>
+  <body class="page">
+    <div class="page__wrapper">
+      <header class="header">
+        <div class="header__container">
+          <a class="header__logo" href="/">
+            <img class="header__logo-image" src="/weblarek/assets/logo-CkpUjmkg.svg" alt="Web-Larek! logo" />
+          </a>
+          <button class="header__basket">
+            <span class="header__basket-counter">0</span>
+          </button>
+        </div>
+      </header>
+
+      <main class="gallery"></main>
+    </div>
+
+    <div class="modal" id="modal-container">
+      <div class="modal__container">
+        <button class="modal__close" aria-label="закрыть"></button>
+        <div class="modal__content">
+
+        </div>
+      </div>
+    </div>
+
+    <template id="success">
+      <div class="order-success">
+        <h2 class="order-success__title">Заказ оформлен</h2>
+        <p class="order-success__description">Списано 0 синапсов</p>
+        <button class="button order-success__close">За новыми покупками!</button>
+      </div>
+    </template>
+
+    <template id="card-catalog">
+      <button class="gallery__item card">
+        <span class="card__category card__category_soft">софт-скил</span>
+        <h2 class="card__title">+1 час в сутках</h2>
+        <img class="card__image" src="data:image/svg+xml,%3csvg%20width='256'%20height='256'%20viewBox='0%200%20256%20256'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20filter='url(%23filter0_iiiii_325_323)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M128%20256C198.692%20256%20256%20198.692%20256%20128C256%2057.3076%20198.692%200%20128%200C57.3076%200%200%2057.3076%200%20128C0%20198.692%2057.3076%20256%20128%20256ZM57.3432%20133.663C60.8407%20130.181%2066.4978%20130.191%2069.983%20133.685L82.2555%20145.989C85.7647%20149.508%2087.5193%20151.267%2089.2727%20152.433C96.3141%20157.115%20105.477%20157.117%20112.52%20152.438C114.274%20151.273%20116.03%20149.515%20119.541%20145.998L189.105%2076.3205C192.588%2072.8319%20198.241%2072.8333%20201.722%2076.3235C205.192%2079.8022%20205.192%2085.4327%20201.722%2088.9114L125.861%20164.969C116.422%20174.431%20111.703%20179.163%20106.137%20180.598C102.698%20181.485%2099.0896%20181.485%2095.6501%20180.598C90.0844%20179.163%2085.3652%20174.431%2075.9267%20164.969L57.3208%20146.315C53.8309%20142.816%2053.8409%20137.149%2057.3432%20133.663Z'%20fill='%230C1828'%20fill-opacity='0.31'/%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_iiiii_325_323'%20x='0'%20y='-0.513394'%20width='256'%20height='263.188'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='0.128348'/%3e%3cfeGaussianBlur%20stdDeviation='2.56697'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.2%200'/%3e%3cfeBlend%20mode='normal'%20in2='shape'%20result='effect1_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='0.513394'/%3e%3cfeGaussianBlur%20stdDeviation='1.15514'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.5%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect1_innerShadow_325_323'%20result='effect2_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='6.16073'%20operator='dilate'%20in='SourceAlpha'%20result='effect3_innerShadow_325_323'/%3e%3cfeOffset%20dy='12.5782'/%3e%3cfeGaussianBlur%20stdDeviation='6.41742'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.3%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect2_innerShadow_325_323'%20result='effect3_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='8.2143'%20operator='dilate'%20in='SourceAlpha'%20result='effect4_innerShadow_325_323'/%3e%3cfeOffset%20dy='-10.5246'/%3e%3cfeGaussianBlur%20stdDeviation='4.36385'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.908333%200%200%200%200%200.908333%200%200%200%200%200.908333%200%200%200%201%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect3_innerShadow_325_323'%20result='effect4_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='0.513394'%20operator='dilate'%20in='SourceAlpha'%20result='effect5_innerShadow_325_323'/%3e%3cfeOffset%20dy='0.898439'/%3e%3cfeGaussianBlur%20stdDeviation='0.705917'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%201%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect4_innerShadow_325_323'%20result='effect5_innerShadow_325_323'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e" alt="" />
+        <span class="card__price">750 синапсов</span>
+      </button>
+    </template>
+
+    <template id="card-preview">
+      <div class="card card_full">
+        <img class="card__image" src="data:image/svg+xml,%3csvg%20width='256'%20height='256'%20viewBox='0%200%20256%20256'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cg%20filter='url(%23filter0_iiiii_325_323)'%3e%3cpath%20fill-rule='evenodd'%20clip-rule='evenodd'%20d='M128%20256C198.692%20256%20256%20198.692%20256%20128C256%2057.3076%20198.692%200%20128%200C57.3076%200%200%2057.3076%200%20128C0%20198.692%2057.3076%20256%20128%20256ZM57.3432%20133.663C60.8407%20130.181%2066.4978%20130.191%2069.983%20133.685L82.2555%20145.989C85.7647%20149.508%2087.5193%20151.267%2089.2727%20152.433C96.3141%20157.115%20105.477%20157.117%20112.52%20152.438C114.274%20151.273%20116.03%20149.515%20119.541%20145.998L189.105%2076.3205C192.588%2072.8319%20198.241%2072.8333%20201.722%2076.3235C205.192%2079.8022%20205.192%2085.4327%20201.722%2088.9114L125.861%20164.969C116.422%20174.431%20111.703%20179.163%20106.137%20180.598C102.698%20181.485%2099.0896%20181.485%2095.6501%20180.598C90.0844%20179.163%2085.3652%20174.431%2075.9267%20164.969L57.3208%20146.315C53.8309%20142.816%2053.8409%20137.149%2057.3432%20133.663Z'%20fill='%230C1828'%20fill-opacity='0.31'/%3e%3c/g%3e%3cdefs%3e%3cfilter%20id='filter0_iiiii_325_323'%20x='0'%20y='-0.513394'%20width='256'%20height='263.188'%20filterUnits='userSpaceOnUse'%20color-interpolation-filters='sRGB'%3e%3cfeFlood%20flood-opacity='0'%20result='BackgroundImageFix'/%3e%3cfeBlend%20mode='normal'%20in='SourceGraphic'%20in2='BackgroundImageFix'%20result='shape'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='0.128348'/%3e%3cfeGaussianBlur%20stdDeviation='2.56697'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.2%200'/%3e%3cfeBlend%20mode='normal'%20in2='shape'%20result='effect1_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeOffset%20dy='0.513394'/%3e%3cfeGaussianBlur%20stdDeviation='1.15514'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.5%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect1_innerShadow_325_323'%20result='effect2_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='6.16073'%20operator='dilate'%20in='SourceAlpha'%20result='effect3_innerShadow_325_323'/%3e%3cfeOffset%20dy='12.5782'/%3e%3cfeGaussianBlur%20stdDeviation='6.41742'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200%200.909804%200%200%200%200.3%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect2_innerShadow_325_323'%20result='effect3_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='8.2143'%20operator='dilate'%20in='SourceAlpha'%20result='effect4_innerShadow_325_323'/%3e%3cfeOffset%20dy='-10.5246'/%3e%3cfeGaussianBlur%20stdDeviation='4.36385'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%200.908333%200%200%200%200%200.908333%200%200%200%200%200.908333%200%200%200%201%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect3_innerShadow_325_323'%20result='effect4_innerShadow_325_323'/%3e%3cfeColorMatrix%20in='SourceAlpha'%20type='matrix'%20values='0%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200'%20result='hardAlpha'/%3e%3cfeMorphology%20radius='0.513394'%20operator='dilate'%20in='SourceAlpha'%20result='effect5_innerShadow_325_323'/%3e%3cfeOffset%20dy='0.898439'/%3e%3cfeGaussianBlur%20stdDeviation='0.705917'/%3e%3cfeComposite%20in2='hardAlpha'%20operator='arithmetic'%20k2='-1'%20k3='1'/%3e%3cfeColorMatrix%20type='matrix'%20values='0%200%200%200%201%200%200%200%200%201%200%200%200%200%201%200%200%200%201%200'/%3e%3cfeBlend%20mode='normal'%20in2='effect4_innerShadow_325_323'%20result='effect5_innerShadow_325_323'/%3e%3c/filter%3e%3c/defs%3e%3c/svg%3e" alt="" />
+        <div class="card__column">
+          <span class="card__category card__category_other">другое</span>
+          <h2 class="card__title">Бэкенд-антистресс</h2>
+          <p class="card__text">Если планируете решать задачи в тренажёре, берите два.</p>
+          <div class="card__row">
+            <button class="button card__button">В корзину</button>
+            <span class="card__price">1000 синапсов</span>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <template id="card-basket">
+      <li class="basket__item card card_compact">
+        <span class="basket__item-index">1</span>
+        <span class="card__title">Фреймворк куки судьбы</span>
+        <span class="card__price">2500 синапсов</span>
+        <button class="basket__item-delete card__button" aria-label="удалить"></button>
+      </li>
+    </template>
+
+    <template id="basket">
+      <div class="basket">
+        <h2 class="modal__title">Корзина</h2>
+        <ul class="basket__list">
+
+        </ul>
+        <div class="modal__actions">
+          <button class="button basket__button">Оформить</button>
+          <span class="basket__price">0 синапсов</span>
+        </div>
+      </div>
+    </template>
+
+    <template id="order">
+      <form class="form" name="order">
+        <div class="order">
+          <div class="order__field">
+            <h2 class="modal__title">Способ оплаты</h2>
+            <div class="order__buttons">
+              <button name="card" type="button" class="button button_alt">Онлайн</button>
+              <button name="cash" type="button" class="button button_alt">При получении</button>
+            </div>
+          </div>
+          <label class="order__field">
+            <span class="form__label modal__title">Адрес доставки</span>
+            <input name="address" class="form__input" type="text" placeholder="Введите адрес" />
+          </label>
+        </div>
+        <div class="modal__actions">
+          <button type="submit" disabled class="button order__button">Далее</button>
+          <span class="form__errors"></span>
+        </div>
+      </form>
+    </template>
+
+    <template id="contacts">
+      <form class="form" name="contacts">
+        <div class="order">
+          <label class="order__field">
+            <span class="form__label modal__title">Email</span>
+            <input name="email" class="form__input" type="text" placeholder="Введите Email" />
+          </label>
+          <label class="order__field">
+            <span class="form__label modal__title">Телефон</span>
+            <input name="phone" class="form__input" type="text" placeholder="+7 (" />
+          </label>
+        </div>
+        <div class="modal__actions">
+          <button type="submit" disabled class="button">Оплатить</button>
+          <span class="form__errors"></span>
+        </div>
+      </form>
+    </template>
+
+  </body>
+</html>
