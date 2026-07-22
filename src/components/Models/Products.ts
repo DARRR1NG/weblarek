@@ -1,5 +1,5 @@
 import { IProduct } from "../../types";
-import { EventEmitter, IEvents } from "../base/Events";
+import { IEvents } from "../base/Events";
 export class Products {
     chooseCard: IProduct | null = null;
     productsList: IProduct[] = [];
